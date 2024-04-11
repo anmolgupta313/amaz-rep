@@ -1,0 +1,40 @@
+.checkout-container{
+    display: flex;
+    height: max-content;
+    background-color: white;
+    padding:10px;
+}
+
+.checkout-total-div {
+    background-color: #f3f3f3;
+    padding: 20px;
+    width: 300px;
+    height: 100px;
+    border: 1px #dddddd;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.checkout-title{
+padding: 10px;
+margin-right: 10px;
+border-bottom: 1px solid lightgray;
+}
+
+
+.checkout-right p{
+    margin: 0px;
+}
+
+
+.checkbox-gift {
+    display: flex;
+}
+
+.checkout-btn{
+    background-color: #f3a847;
+    padding: 5px;
+    font-weight: 500;
+    font-size: 15px;
+}
