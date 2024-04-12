@@ -6,6 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 function Header() {
+
+//   const userStorage= localStorage.getItem("persist:root")
+
+//   const userJson= JSON.parse(userStorage)|| []
+
+//   console.log(userJson,"json")
+// const valueToRemove= "user"
+
+// const filterUser= userJson.filter(item=> item !=valueToRemove)
+
   const cart = useSelector((state) => {
     return state.basket.basket;
   });
@@ -16,6 +26,8 @@ function Header() {
 
   const handleAuthentication = () => {
     if (user) {
+// filterUser()
+      // localStorage.removeItem("persist:root")
       return auth.signOut();
     }
   };

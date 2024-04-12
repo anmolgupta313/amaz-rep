@@ -13,7 +13,7 @@ function Checkout() {
       <div className="checkout-left">
         <img
           className="checkout-Add"
-          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1.CB423492668_.JPG"
+          src=""
           alt=""
         />
         <h2 className="checkout-title">Your Shopping Basket</h2>
