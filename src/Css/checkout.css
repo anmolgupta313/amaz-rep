@@ -38,3 +38,17 @@ border-bottom: 1px solid lightgray;
     font-weight: 500;
     font-size: 15px;
 }
+
+.cart-item-sub-div {
+    column-gap: 20px;
+}
+
+img.cart-item-img {
+    width: 164px;
+    height: fit-content;
+}
+
+button.remove-item-btn {
+    background-color: #f3a847;
+    padding: 5px;
+}

@@ -2,14 +2,14 @@ import React from "react";
 import "../Css/Product.css";
 // import { useStateValue } from "../stateProvider";
 import { useDispatch, useSelector } from "react-redux";
-import { addToBasket } from "../redux/action";
+
 import { addtoCart } from "../redux/cartSlice";
 
-function Product({ title, image, price, rating }) {
+function Product({id, title, image, price, rating }) {
   const dispatch = useDispatch();
 
   function onClick() {
-    dispatch(addtoCart({ title, price, image }));
+    dispatch(addtoCart({id, title, price, image }));
   }
   const cart = useSelector((state) => {
     return state;

@@ -10,14 +10,21 @@ const Home = () => {
 
         <div className="home-row">
           <Product
+            id="1"
             title="Soluna Solar Eclipse Glasses - CE and ISO Certified Safe Shades for
           Direct Sun Viewing - Made in the USA (5 Pack) - Lunettes Pour éclipse
           Solaire"
             image="https://m.media-amazon.com/images/I/61GkRpDddpL._AC_SX679_.jpg"
-            price="29.99"
+            price={29.99}
             rating={4}
           />
-          <Product />
+          <Product     id="2"
+            title="Soluna Solar Eclipse Glasses - CE and ISO Certified Safe Shades for
+          Direct Sun Viewing - Made in the USA (5 Pack) - Lunettes Pour éclipse
+          Solaire"
+            image="https://m.media-amazon.com/images/I/61GkRpDddpL._AC_SX679_.jpg"
+            price={29.99}
+            rating={4} />
         </div>
         <div className="home-row">
           <Product />

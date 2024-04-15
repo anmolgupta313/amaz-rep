@@ -5,17 +5,25 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
+
+import { useNavigate } from "react-router-dom";
+
 function Header() {
+  
+  //   const userStorage= localStorage.getItem("persist:root")
 
-//   const userStorage= localStorage.getItem("persist:root")
+  //   const userJson= JSON.parse(userStorage)|| []
 
-//   const userJson= JSON.parse(userStorage)|| []
-
-//   console.log(userJson,"json")
-// const valueToRemove= "user"
-
-// const filterUser= userJson.filter(item=> item !=valueToRemove)
-
+  //   console.log(userJson,"json")
+  // const valueToRemove= "user"
+const navigate= useNavigate()
+  // const filterUser= userJson.filter(item=> item !=valueToRemove)
+const checkoutPageNavigate= ()=>{
+  navigate("/checkout")
+}
+const homePageNavi= ()=>{
+  navigate('/')
+}
   const cart = useSelector((state) => {
     return state.basket.basket;
   });
@@ -25,17 +33,19 @@ function Header() {
   });
 
   const handleAuthentication = () => {
-    if (user) {
-// filterUser()
-      // localStorage.removeItem("persist:root")
+    if (user.user.loginInput) {
+      // filterUser()
+      localStorage.removeItem("persist:root");
       return auth.signOut();
     }
   };
+
   return (
     <div className="header">
       <img
         src="http://pngimg.com/uploads/amazon/amazon_PNG11.png"
-        alt="logo with arrow"
+        alt="logo with arrow"  
+        onClick={homePageNavi}
       />
       <div className="header-search">
         <input type="text" name="" id="" className="header-serach-input" />
@@ -44,10 +54,16 @@ function Header() {
       <div className="header-nav">
         <Link to="/login">
           {" "}
-          <div className="header-option" >
-            <span className="header-option-line-one">Hello</span>
-            <span className="header-option-line-two" onClick={handleAuthentication}>
-              {user ? "Sign Out" : "Sign In"}
+          <div className="header-option">
+            <span className="header-option-line-one">
+              Hello{" "}
+              {user.user.loginInput ? user.user.loginInput.email : "Guest"}{" "}
+            </span>
+            <span
+              className="header-option-line-two"
+              onClick={handleAuthentication}
+            >
+              {user.user.loginInput ? "Sign Out" : "Sign In"}
             </span>
           </div>
         </Link>
@@ -61,7 +77,7 @@ function Header() {
           <span className="header-option-line-two">Prime</span>
         </div>
 
-        <div className="header-option-basket">
+        <div className="header-option-basket" onClick={checkoutPageNavigate}>
           <ShoppingBasketIcon className="header-shopping-cart-icon" />
           <span className="header-option-line-two header-basket-count ">
             {cart.basket?.length}
